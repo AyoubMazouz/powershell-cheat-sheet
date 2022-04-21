@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { data } from '../../data'
-import ResultTable from './ResultTable'
-import Options from './Options'
+import { data } from '../data'
+import ResultTable from '../components/CheatSheet/ResultTable'
+import Options from '../components/CheatSheet/Options'
 
 
 export default function CheatSheet () {

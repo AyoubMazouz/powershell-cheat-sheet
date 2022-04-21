@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-    .--nth-child-bg:nth-child(odd) {
-        background: hsl(0, 0%, 94%);
-    }
+    .--nth-child-bg:nth-child(odd) { background: hsl(0, 0%, 94%) }
+    
 }
+.active { @apply bg-white text-sky-800 }

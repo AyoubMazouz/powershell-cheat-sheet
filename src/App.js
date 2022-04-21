@@ -1,20 +1,32 @@
-// import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import './App.css';
-import CheatSheet from './components/CheatSheet'
+import Nav from './components/Nav'
+import Home from './pages/Home'
+import CheatSheet from './pages/CheatSheet'
+import About from './pages/About'
+import PageNotFound from './pages/PageNotFound'
 
 
 function App() {
 
   return (
-      <div className="font-[Roboto] flex flex-col justify-center items-center py-12">
-        
-        <div className='text-4xl py-12'>PowerSell Cheat Sheet</div>
-          
-          
+    <AnimatePresence>
+      <Router>
+        <div className="font-[Roboto] flex flex-col justify-center items-center py-12">
 
-                <CheatSheet />
+            <Nav />
 
-      </div>
+            <Routes>
+              <Route path='/' element={<Home />}></Route>
+              <Route path='/cheatsheet' element={<CheatSheet />}></Route>
+              <Route path='/about' element={<About />}></Route>
+              <Route path='*' element={<PageNotFound />}></Route>
+            </Routes>
+
+        </div>
+      </Router>
+    </AnimatePresence>
   );
 }
 
