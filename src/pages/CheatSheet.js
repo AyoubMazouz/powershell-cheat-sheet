@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { data } from '../data'
+import { data } from '../powerShellCheatSheet.data'
 import ResultTable from '../components/CheatSheet/ResultTable'
 import Options from '../components/CheatSheet/Options'
 
