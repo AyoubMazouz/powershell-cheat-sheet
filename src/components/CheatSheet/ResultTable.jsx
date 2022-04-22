@@ -1,7 +1,10 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { FaClone } from 'react-icons/fa'
 
 export default function ResultTable({ data, options, search }) {
+  const [result, setResult] = useState([false])
+  useEffect(() => setResult(getResult()) , [search])
+
   const optionCheck = v => {
     if (options.cmdlet && v.alias.length > 0) return true
     else if (options.function && v.alias.length <= 0) return true
@@ -15,7 +18,7 @@ export default function ResultTable({ data, options, search }) {
       if (v.alias[i].includes(search.toLocaleLowerCase())) return optionCheck(v)
     }
   }
-  const renderResult = () => {
+  const getResult = () => {
     const result = data.filter(v => search ? searchFunc(v) : optionCheck(v))
     return result.length > 0 ? result : [false] 
   }
@@ -32,16 +35,15 @@ export default function ResultTable({ data, options, search }) {
 
   return (
     <>
-      <div className='px-4 font-medium'>There is {renderResult()[0] ? renderResult().length : 0} result for " {search} ".</div>
+      <div className='px-4 font-medium'>There is {result[0] ? result.length : 0} result for " {search} ".</div>
       <div className='w-full min-w-[600px] lg:max-w-[1100px] max-h-[65vh] font-semibold shadow-lg rounded-t-lg overflow-y-scroll'>
         <div className='w-full grid grid-cols-12 gap-4 py-4 px-4 bg-sky-600 text-white text-base border-b-2 border-sky-800'>
           <div className='col-span-3'>Name</div>
           <div className='col-span-2'>Cmdlet</div>
           <div className='col-span-5'>Description</div>
           <div className='col-span-2'>Type</div>
-        </div>
-        
-      {renderResult().map((v, id) => (
+        </div>    
+      {result.map((v, id) => (
         v ? <div key={id} className='--nth-child-bg w-full grid grid-cols-12 border-b-2 border-sky-800 gap-2 md:gap-4 py-4 px-2 md:px-6 text-gray-700 text-xs sm:text-sm lg:text-base'>
               <div className='col-span-3 flex items-center space-x-2'>
                 <FaClone className='text-xl text-sky-800 hover:text-sky-500 cursor-pointer' 
