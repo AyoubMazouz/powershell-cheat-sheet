@@ -7,9 +7,7 @@ import CheatSheet from './pages/CheatSheet'
 import About from './pages/About'
 import PageNotFound from './pages/PageNotFound'
 
-
 function App() {
-
   return (
     <AnimatePresence>
       <Router>
@@ -29,5 +27,4 @@ function App() {
     </AnimatePresence>
   );
 }
-
 export default App;

@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
-import { flushSync } from 'react-dom'
+import { detailsUrl } from '../../powerShellCheatSheet.data'
 import { FaClone } from 'react-icons/fa'
 
 export default function ResultTable({ data, options, search }) {
   const [result, setResult] = useState([false])
   useEffect(() => setResult(getResult()) , [search, options])
-
   const optionCheck = v => {
     if (options.cmdlet && v.alias.length > 0) return true
     else if (options.function && v.alias.length <= 0) return true
@@ -23,17 +22,14 @@ export default function ResultTable({ data, options, search }) {
     const result = data.filter(v => search ? searchFunc(v) : optionCheck(v))
     return result.length > 0 ? result : [false] 
   }
-  const onClickCloneName = id => {
-    navigator.clipboard.writeText(data[id].name).then(() => {
+  const onClickClone = (id, v) => {
+    navigator.clipboard.writeText(data[id][v]).then(() => {
       alert("Copied to clipboard");
   });
   }
-  const onClickCloneCmdlet = id => {
-    navigator.clipboard.writeText(data[id].alias).then(() => {
-      alert("Copied to clipboard");
-  });
-  }
+  const onClickLink = id => {
 
+  }
   return (
     <>
       <div className='px-4 font-medium'>There is {result[0] ? result.length : 0} result for " {search} ".</div>
@@ -47,13 +43,13 @@ export default function ResultTable({ data, options, search }) {
       {result.map((v, id) => (
         v ? <div key={id} className='--nth-child-bg w-full grid grid-cols-12 border-b-2 border-sky-800 gap-2 md:gap-4 py-4 px-2 md:px-6 text-gray-700 text-xs sm:text-sm lg:text-base'>
               <div className='col-span-3 flex items-center space-x-2'>
-                <FaClone className='text-xl text-sky-800 hover:text-sky-500 cursor-pointer' 
-                  onClick={() => onClickCloneName(id)} /><div>{v.name}</div>
+                <FaClone className='text-xl text-sky-800 hover:text-sky-500 cursor-pointer' onClick={() => onClickClone(id, 'name')} />
+                <a href={detailsUrl + v.name.toLocaleLowerCase()} target='_blank'>{v.name}</a>
               </div>
               <div className='col-span-2 flex flex-col items-center space-x-2 space-y-1'>
                 {v.alias.map(v => <div className='w-full flex space-x-2'>
-                  <FaClone className='text-xl text-sky-700 hover:text-sky-500 cursor-pointer' 
-                  onClick={() => onClickCloneCmdlet(id)} /><div>{v}</div></div>)}
+                  <FaClone className='text-xl text-sky-700 hover:text-sky-500 cursor-pointer' onClick={() => onClickClone(id, 'alias')} />
+                  <div>{v}</div></div>)}
               </div>
               <div className='col-span-5 flex justify-start items-center'>{v.description}</div>
               <div className={v.alias.length <= 0 ? 'flex justify-center items-center col-span-2 h-8 w-20 bg-orange-400 rounded-lg shadow-md' 
