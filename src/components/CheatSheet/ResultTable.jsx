@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import { flushSync } from 'react-dom'
 import { FaClone } from 'react-icons/fa'
 
 export default function ResultTable({ data, options, search }) {
   const [result, setResult] = useState([false])
-  useEffect(() => setResult(getResult()) , [search])
+  useEffect(() => setResult(getResult()) , [search, options])
 
   const optionCheck = v => {
     if (options.cmdlet && v.alias.length > 0) return true
