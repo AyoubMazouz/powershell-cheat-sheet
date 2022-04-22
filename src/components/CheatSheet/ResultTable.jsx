@@ -48,12 +48,14 @@ export default function ResultTable({ data, options, search }) {
                   onClick={() => onClickCloneName(id)} /><div>{v.name}</div>
               </div>
               <div className='col-span-2 flex flex-col items-center space-x-2 space-y-1'>
-                {v.alias.map(v => <div className='w-full flex space-x-2'><FaClone className='text-xl text-sky-700 hover:text-sky-500 cursor-pointer' 
+                {v.alias.map(v => <div className='w-full flex space-x-2'>
+                  <FaClone className='text-xl text-sky-700 hover:text-sky-500 cursor-pointer' 
                   onClick={() => onClickCloneCmdlet(id)} /><div>{v}</div></div>)}
               </div>
               <div className='col-span-5 flex justify-start items-center'>{v.description}</div>
               <div className={v.alias.length <= 0 ? 'flex justify-center items-center col-span-2 h-8 w-20 bg-orange-400 rounded-lg shadow-md' 
-                : 'col-span-2 flex justify-center items-center h-8 w-20 bg-blue-400 rounded-lg shadow-md'}>{v.alias.length <= 0 ? 'Function' : 'CmdLet'}</div>
+                : 'col-span-2 flex justify-center items-center h-8 w-20 bg-blue-400 rounded-lg shadow-md'}>
+                  {v.alias.length <= 0 ? 'Function' : 'CmdLet'}</div>
             </div> 
         : <div className='p-4 border-b-2 border-sky-700'>There is 0 result for " {search} ".</div>
       ))}
