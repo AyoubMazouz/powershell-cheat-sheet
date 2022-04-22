@@ -470,6 +470,58 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: visible;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.left-\[4rem\] {
+  left: 4rem;
+}
+
+.left-\[8rem\] {
+  left: 8rem;
+}
+
+.left-\[9rem\] {
+  left: 9rem;
+}
+
+.top-\[\.2rem\] {
+  top: .2rem;
+}
+
+.top-\[\.4rem\] {
+  top: .4rem;
+}
+
+.top-\[\.5rem\] {
+  top: .5rem;
+}
+
+.right-\[9rem\] {
+  right: 9rem;
+}
+
+.left-\[1rem\] {
+  left: 1rem;
+}
+
+.right-\[1rem\] {
+  right: 1rem;
+}
+
+.left-\[\.8rem\] {
+  left: .8rem;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
@@ -489,6 +541,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.ml-\[2rem\] {
+  margin-left: 2rem;
 }
 
 .block {
@@ -711,6 +767,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.5rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -760,6 +826,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 500;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
@@ -795,9 +865,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(3 105 161 / var(--tw-text-opacity));
 }
 
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-40 {
+  opacity: 0.4;
 }
 
 .shadow-lg {
