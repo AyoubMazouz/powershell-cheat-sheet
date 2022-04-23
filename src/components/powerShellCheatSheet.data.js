@@ -1,3 +1,5 @@
+// In this file live all powerShell commands.
+
 export const detailsUrl = 'https://www.pdq.com/powershell/'
 export const data = [
     // A

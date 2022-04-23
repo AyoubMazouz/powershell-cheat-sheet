@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 export default function Nav() {
-
+  // Animations Variants
   const headerVariant = {
     hidden: {
       opacity: 0, 
@@ -50,14 +50,9 @@ export default function Nav() {
       <motion.div initial='hidden' animate='visible' exit='exit' className='py-8 space-y-6' >
           <motion.div variants={headerVariant} className='text-4xl' >PowerSell Cheat Sheet</motion.div>
           <motion.ul variants={containerVariant} initial={false} className='flex justify-center font-semibold text-white space-x-4'>
-          <motion.div variants={linkVariant}>
-              <motion.div whileHover={{...linkVariant.hover}}>
-                <NavLink to='/' className='px-6 py-2 bg-sky-600 rounded-md'>Home</NavLink>
-              </motion.div>
-            </motion.div>
             <motion.div variants={linkVariant}>
               <motion.div whileHover={{...linkVariant.hover}}>
-                <NavLink to='/cheatsheet' className='px-6 py-2 bg-sky-600 rounded-md'>CheatSheet</NavLink>
+                <NavLink to='/' className='px-6 py-2 bg-sky-600 rounded-md'>CheatSheet</NavLink>
               </motion.div>
             </motion.div>
             <motion.div variants={linkVariant}>

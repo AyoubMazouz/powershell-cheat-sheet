@@ -1,30 +1,36 @@
 import { useEffect, useState } from 'react'
-import { detailsUrl } from '../../powerShellCheatSheet.data'
+import { detailsUrl } from './powerShellCheatSheet.data'
 import { FaRegClone } from 'react-icons/fa'
 
 export default function ResultTable({ data, options, search }) {
+  // To store result array to be used multiple times
   const [result, setResult] = useState([false])
+  // update result as search changes.
   useEffect(() => setResult(getResult()) , [search, options])
+  // Check if the user deselect some option and un-include it in the array.
   const optionCheck = v => {
     if (options.cmdlet && v.alias.length > 0) return true
     else if (options.function && v.alias.length <= 0) return true
   }
+  // Format the string and match the search with the correct values.
   const searchFunc = v => {
     if (!v) return
+    // Search using Name.
     if (v.name.toLocaleLowerCase().replace('-', '').includes(search.toLocaleLowerCase())) {
         return optionCheck(v)
     }
+    // Search using cmdlet.
     for (const i in v.alias) {
       if (v.alias[i].includes(search.toLocaleLowerCase())) return optionCheck(v)
     }
   }
+  // Return the result array, filtered using the above functions.
   const getResult = () => {
     const result = data.filter(v => search ? searchFunc(v) : optionCheck(v))
     return result.length > 0 ? result : [false] 
   }
-  const onClickClone = (id, v) => {
-    navigator.clipboard.writeText(data[id][v]).then(() => alert("Copied to clipboard"));
-  }
+  // Copy to clipboard.
+  const onClickClone = (id, v) => navigator.clipboard.writeText(data[id][v]).then(() => alert("Copied to clipboard"))
   return (
     <>
       <div className='px-4'>{search 
@@ -36,7 +42,8 @@ export default function ResultTable({ data, options, search }) {
           <div className='col-span-2'>Alias</div>
           <div className='col-span-5'>Description</div>
           <div className='col-span-2'>Type</div>
-        </div>    
+        </div>
+        {/* Render a row each iteration { Name, Alias, Description, Type }  */}
       {result.map((v, id) => (
         v ? <div key={id} className='--nth-child-bg w-full grid grid-cols-12 border-b-2 border-sky-800 gap-2 md:gap-4 py-4 px-2 md:px-6 text-gray-700 text-xs sm:text-sm lg:text-base'>
               <div className='col-span-3 flex items-center space-x-2 font-bold text-sky-600'>

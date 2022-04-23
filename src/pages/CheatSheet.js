@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
-import { data } from '../powerShellCheatSheet.data'
-import ResultTable from '../components/CheatSheet/ResultTable'
-import Options from '../components/CheatSheet/Options'
+import { data } from '../components/powerShellCheatSheet.data'
+import ResultTable from '../components/ResultTable'
+import Options from '../components/Options'
 
 
 export default function CheatSheet () {
     const [search, setSearch] = useState()
+    // Used to display or not cmdlet or functions.
     const [options, setOptions] = useState({cmdlet: true, function: true})
 
     const onChangeSearch = (ev) => {
