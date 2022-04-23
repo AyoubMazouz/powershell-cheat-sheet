@@ -25,8 +25,8 @@ export default function About() {
         </div>
         {/* Repository */}
         <div>
-          <h3 className='text-sky-800 font-semibold'
-          >Repository: <a href={data.repository} className='text-blue-500'>{data.repository}</a></h3>
+          <h3 className='text-sky-800 font-semibold'>Repository: 
+            <a href={data.repository} target='_blank' className='text-blue-500'>{data.repository}</a></h3>
         </div>
       </div>
     </div>

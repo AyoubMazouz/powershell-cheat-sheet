@@ -3,7 +3,8 @@
 export const about = {
     resources: [
         'https://www.pdq.com/powershell/',
-        'https://ss64.com/ps/'
+        'https://ss64.com/ps/',
+        'https://docs.microsoft.com/en-us/powershell/'
     ],
     contributors: [
         'Ayoub Mazouz'

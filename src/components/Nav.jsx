@@ -34,7 +34,7 @@ export default function Nav() {
     },
     hover: {
       scale: 1.1,
-      opacity: .8
+      opacity: .7
     },
   }
   const containerVariant = {
@@ -52,12 +52,12 @@ export default function Nav() {
           <motion.ul variants={containerVariant} initial={false} className='flex justify-center font-semibold text-white space-x-4'>
             <motion.div variants={linkVariant}>
               <motion.div whileHover={{...linkVariant.hover}}>
-                <NavLink to='/' className='px-6 py-2 bg-sky-600 rounded-md'>CheatSheet</NavLink>
+                <NavLink to='/' className='px-6 py-2 bg-sky-500 rounded-md'>CheatSheet</NavLink>
               </motion.div>
             </motion.div>
             <motion.div variants={linkVariant}>
               <motion.div whileHover={{...linkVariant.hover}}>
-                <NavLink to='/about' className='px-6 py-2 bg-sky-600 rounded-md'>About</NavLink>
+                <NavLink to='/about' className='px-6 py-2 bg-sky-500 rounded-md'>About</NavLink>
               </motion.div>
             </motion.div>
           </motion.ul>

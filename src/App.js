@@ -10,7 +10,7 @@ function App() {
   return (
     <AnimatePresence>
       <Router>
-        <div className="font-[Roboto] flex flex-col justify-center items-center py-12">
+        <div className="font-['Roboto mono'] flex flex-col justify-center items-center py-12">
 
             <Nav />
 
