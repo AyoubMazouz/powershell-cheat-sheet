@@ -23,9 +23,7 @@ export default function ResultTable({ data, options, search }) {
     return result.length > 0 ? result : [false] 
   }
   const onClickClone = (id, v) => {
-    navigator.clipboard.writeText(data[id][v]).then(() => {
-      alert("Copied to clipboard");
-  });
+    navigator.clipboard.writeText(data[id][v]).then(() => alert("Copied to clipboard"));
   }
   return (
     <>

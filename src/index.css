@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
     .--nth-child-bg:nth-child(odd) { background: hsl(0, 0%, 94%) }
+    .--powershell-gradient-bg { background: linear-gradient(135deg, rgba(11,39,112,1) 0%, rgba(0,212,255,1) 100%) }
 }
 .active { @apply bg-white text-sky-800 }

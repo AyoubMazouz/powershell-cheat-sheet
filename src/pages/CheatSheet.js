@@ -3,7 +3,6 @@ import { FaSearch } from 'react-icons/fa'
 import { data } from '../powerShellCheatSheet.data'
 import ResultTable from '../components/CheatSheet/ResultTable'
 import Options from '../components/CheatSheet/Options'
-import { isCompositeComponent } from 'react-dom/test-utils'
 
 
 export default function CheatSheet () {

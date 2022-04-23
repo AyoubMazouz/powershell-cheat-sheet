@@ -1,4 +1,18 @@
 
+export const home = {
+    header: 'PowerShell is a robust command-line tool, scripting language, and automation platform. It helps sysadmins automate recurring tasks so they can spend more time where it matters.',
+    illustration: [
+        [5, 3, 1, 0],
+        [2, 3, 1, 0],
+        [7, 2, 3, 0],
+        [5, 2, 3, 0],
+        [5, 2, 3, 0],
+        [5, 2, 3, 0],
+        [5, 2, 3, 0],
+    ]
+
+}
+
 export const about = {
     resources: [
         'https://www.pdq.com/powershell/',
