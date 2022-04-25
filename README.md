@@ -1,6 +1,6 @@
 # PowerShell Cheat Sheet:
 
-###### PSCheatSheet is a Web App made with React, it features a list of 400+ PowerShell command as well as sort description and it cmdlet and also the type of the command, while searching you can filter the result using a few options, on clicking on any command name you'll be redirected to another page to see in dept description with examples for different parameters.
+###### PSCheatSheet is a Web App made with React, it features a list of **400+ PowerShell command** as well as short description and it cmdlet and also the type of the command, you can _search_ by _command name_ or _cmdlet_ while searching you can _filter_ the result using _options_ on the top right side, on _clicking_ on any command name you'll be redirected to another page to see in dept description with examples for different parameters.
 
 ### How to run:
 
@@ -11,3 +11,11 @@ See live demo [Click here.](https://powershellcheatsheet.netlify.app)
 1. Visit `https://localhost:3000`
 
 ![](https://img.shields.io/badge/version-0.9-blue)
+
+### ScreenShots:
+
+![01](./public/media/screenshot01.png)
+![02](./public/media/screenshot02.png)
+![03](./public/media/screenshot03.png)
+![04](./public/media/screenshot04.png)
+![05](./public/media/screenshot05.png)

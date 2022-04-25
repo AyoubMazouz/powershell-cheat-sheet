@@ -6,9 +6,6 @@ export const about = {
         'https://ss64.com/ps/',
         'https://docs.microsoft.com/en-us/powershell/'
     ],
-    contributors: [
-        'Ayoub Mazouz'
-    ],
     powerShellCheatSheet: {
         version: '0.0.9'
     },

@@ -11,13 +11,6 @@ export default function About() {
             {data.resources.map(v => <li><a href={v}>{v}</a></li>)}
           </ul>
         </div>
-        {/* Contributors */}
-        <div className=''>
-          <h1 className='text-sky-800 font-semibold'>Contributors:</h1>
-          <ul className=''>
-            {data.contributors.map(v => <p>{v}</p>)}
-          </ul>
-        </div>
         {/* Version */}
         <div>
           <h3 className='text-sky-800 font-semibold'
