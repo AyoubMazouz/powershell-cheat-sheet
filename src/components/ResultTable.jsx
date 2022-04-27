@@ -16,7 +16,7 @@ export default function ResultTable({ data, options, search }) {
   const searchFunc = v => {
     if (!v) return
     // Search using Name.
-    if (v.name.toLocaleLowerCase().replace('-', '').includes(search.toLocaleLowerCase())) {
+    if (v.name.toLocaleLowerCase().replace('-', '').includes(search.toLocaleLowerCase().replace('-', ''))) {
         return optionCheck(v)
     }
     // Search using cmdlet.
@@ -30,7 +30,7 @@ export default function ResultTable({ data, options, search }) {
     return result.length > 0 ? result : [false] 
   }
   // Copy to clipboard.
-  const onClickClone = (id, v) => navigator.clipboard.writeText(data[id][v]).then(() => alert("Copied to clipboard"))
+  const onClickClone = v => navigator.clipboard.writeText(v).then(() => alert("Copied to clipboard"))
   return (
     <>
       <div className='px-4'>{search 
@@ -47,13 +47,13 @@ export default function ResultTable({ data, options, search }) {
       {result.map((v, id) => (
         v ? <div key={id} className='--nth-child-bg w-full grid grid-cols-12 border-b border-sky-800 gap-2 md:gap-4 py-4 px-2 md:px-6 text-gray-700 text-xs sm:text-sm lg:text-base'>
               <div className='col-span-3 flex items-center space-x-2 font-bold text-sky-800 hover:underline transition-all duration-300'>
-                <FaRegClone className='text-xl text-sky-800 hover:text-sky-500 cursor-pointer transition-all duration-300' onClick={() => onClickClone(id, 'name')} />
+                <FaRegClone className='text-xl text-sky-800 hover:text-sky-500 cursor-pointer transition-all duration-300' onClick={() => onClickClone(v.name)} />
                 <a href={detailsUrl + v.name.toLocaleLowerCase()} target='_blank'>{v.name}</a>
               </div>
               <div className='col-span-2 flex flex-col items-center space-x-2 space-y-1'>
-                {v.alias.map(v => <div className='w-full flex space-x-2'>
+                {v.alias && v.alias.map((v, id) => <div key={id} className='w-full flex space-x-2'>
                   <FaRegClone className='text-xl text-sky-800 hover:text-sky-500 cursor-pointer transition-all duration-300' 
-                    onClick={() => onClickClone(id, 'alias')} />
+                    onClick={() => onClickClone(v)} />
                   <div>{v}</div></div>)}
               </div>
               <div className='col-span-5 flex justify-start items-center'>{v.description}</div>

@@ -14,8 +14,8 @@ See live demo [Click here.](https://powershellcheatsheet.netlify.app)
 
 ### ScreenShots:
 
-![01](./public/media/screenshot01.png)
-![02](./public/media/screenshot02.png)
-![03](./public/media/screenshot03.png)
-![04](./public/media/screenshot04.png)
-![05](./public/media/screenshot05.png)
+![01](./public/screenshots/screenshot01.png)
+![02](./public/screenshots/screenshot02.png)
+![03](./public/screenshots/screenshot03.png)
+![04](./public/screenshots/screenshot04.png)
+![05](./public/screenshots/screenshot05.png)
