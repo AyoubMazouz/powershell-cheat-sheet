@@ -7,7 +7,7 @@
 See live demo [Click here.](https://pscheatsheet.netlify.app)
 
 1. Clone the repo `git clone https://github.com/ayoubmazouz/powershell-cheat-sheet`
-1. Go to powershell-cheat-sheet folder and run `npm start`
+1. Navigate to powershell-cheat-sheet folder and run `npm start`
 1. Visit `https://localhost:3000`
 
 ![](https://img.shields.io/badge/version-0.9-blue)
