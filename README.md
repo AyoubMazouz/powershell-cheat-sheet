@@ -4,7 +4,7 @@
 
 ### How to run:
 
-See live demo [Click here.](https://powershellcheatsheet.netlify.app)
+See live demo [Click here.](https://pscheatsheet.netlify.app)
 
 1. Clone the repo `git clone https://github.com/ayoubmazouz/powershell-cheat-sheet`
 1. Go to powershell-cheat-sheet folder and run `npm start`
