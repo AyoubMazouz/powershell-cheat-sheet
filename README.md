@@ -16,8 +16,9 @@ See live demo [Click here.](https://pscheatsheet.netlify.app)
 
 ### ScreenShots:
 
-![01](./public/screenshots/screenshot01.png)
-![02](./public/screenshots/screenshot02.png)
-![03](./public/screenshots/screenshot03.png)
-![04](./public/screenshots/screenshot04.png)
-![05](./public/screenshots/screenshot05.png)
+![01](./screenshots/screenshot01.png)
+![02](./screenshots/screenshot02.png)
+![03](./screenshots/screenshot03.png)
+![04](./screenshots/screenshot04.png)
+![05](./screenshots/screenshot05.png)
+![05](./screenshots/screenshot06.png)
